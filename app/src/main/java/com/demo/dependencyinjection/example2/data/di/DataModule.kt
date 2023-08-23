@@ -4,19 +4,14 @@ import com.demo.dependencyinjection.example2.data.datasource.ExampleLocalDataSou
 import com.demo.dependencyinjection.example2.data.datasource.ExampleLocalDataSourceImpl
 import com.demo.dependencyinjection.example2.data.datasource.ExampleRemoteDataSource
 import com.demo.dependencyinjection.example2.data.datasource.ExampleRemoteDataSourceImpl
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 @Module
-class DataModule {
+interface DataModule {
+    @Binds
+    fun bindLocalDataSource(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource
 
-    @Provides
-    fun provideLocalDataSource(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource {
-        return impl
-    }
-
-    @Provides
-    fun provideRemoveDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource {
-        return impl
-    }
+    @Binds
+    fun bindRemoveDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
 }
