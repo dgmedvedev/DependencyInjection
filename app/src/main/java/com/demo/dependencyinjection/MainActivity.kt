@@ -2,7 +2,6 @@ package com.demo.dependencyinjection
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.demo.dependencyinjection.example2.data.di.ContextModule
 import com.demo.dependencyinjection.example2.data.di.DaggerApplicationComponent
 import com.demo.dependencyinjection.example2.presentation.ExampleViewModel
 import javax.inject.Inject
@@ -13,7 +12,8 @@ class MainActivity : AppCompatActivity() {
 
     private val component by lazy {
         DaggerApplicationComponent.builder()
-            .contextModule(ContextModule(application))
+            .context(application)
+            .timeMillis(System.currentTimeMillis())
             .build()
     }
 
