@@ -7,8 +7,32 @@ import dagger.Provides
 class ComputerModule {
 
     @Provides
+    fun provideKeyboard(): Keyboard {
+        return Keyboard()
+    }
+
+    @Provides
+    fun provideMemory(): Memory {
+        return Memory()
+    }
+
+    @Provides
     fun provideMonitor(): Monitor {
         return Monitor()
+    }
+
+    @Provides
+    fun provideMouse(): Mouse {
+        return Mouse()
+    }
+
+    @Provides
+    fun provideComputerTower(
+        storage: Storage,
+        memory: Memory,
+        processor: Processor
+    ): ComputerTower {
+        return ComputerTower(storage, memory, processor)
     }
 
     @Provides
