@@ -3,7 +3,6 @@ package com.demo.dependencyinjection
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.demo.dependencyinjection.example2.ExampleApp
-import com.demo.dependencyinjection.example2.data.di.DaggerApplicationComponent
 import com.demo.dependencyinjection.example2.presentation.ExampleViewModel
 import javax.inject.Inject
 
