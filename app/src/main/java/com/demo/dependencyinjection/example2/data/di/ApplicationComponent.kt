@@ -4,9 +4,8 @@ import android.content.Context
 import com.demo.dependencyinjection.MainActivity
 import dagger.BindsInstance
 import dagger.Component
-import javax.inject.Singleton
 
-@Singleton
+@ApplicationScope
 @Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
     fun inject(activity: MainActivity)
