@@ -8,6 +8,7 @@ import dagger.Component
 @ApplicationScope
 @Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
+
     fun inject(activity: MainActivity)
 
     @Component.Factory
