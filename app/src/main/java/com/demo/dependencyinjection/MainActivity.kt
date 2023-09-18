@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.demo.dependencyinjection.example2.ExampleApp
 import com.demo.dependencyinjection.example2.presentation.ExampleViewModel
+import com.demo.dependencyinjection.example2.presentation.ExampleViewModel2
 import com.demo.dependencyinjection.example2.presentation.ViewModelFactory
 import javax.inject.Inject
 
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[ExampleViewModel::class.java]
+    }
+    private val viewModel2 by lazy {
+        ViewModelProvider(this, viewModelFactory)[ExampleViewModel2::class.java]
     }
 
     private val component by lazy {
@@ -31,5 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         // example2
         viewModel.method()
+        viewModel2.method()
     }
 }
