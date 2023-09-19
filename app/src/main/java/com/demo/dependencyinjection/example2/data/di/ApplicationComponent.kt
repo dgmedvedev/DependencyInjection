@@ -2,6 +2,7 @@ package com.demo.dependencyinjection.example2.data.di
 
 import android.content.Context
 import com.demo.dependencyinjection.MainActivity
+import com.demo.dependencyinjection.MainActivity2
 import dagger.BindsInstance
 import dagger.Component
 
@@ -10,6 +11,8 @@ import dagger.Component
 interface ApplicationComponent {
 
     fun inject(activity: MainActivity)
+
+    fun inject(activity: MainActivity2)
 
     @Component.Factory
     interface ApplicationComponentFactory {
