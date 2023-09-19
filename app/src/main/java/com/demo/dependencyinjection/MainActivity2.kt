@@ -1,8 +1,6 @@
 package com.demo.dependencyinjection
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.demo.dependencyinjection.example2.ExampleApp
@@ -11,7 +9,7 @@ import com.demo.dependencyinjection.example2.presentation.ExampleViewModel2
 import com.demo.dependencyinjection.example2.presentation.ViewModelFactory
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -31,18 +29,9 @@ class MainActivity : AppCompatActivity() {
         component.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // example1
-//        val activity = Activity()
-//        activity.computer.toString()
 
         // example2
         viewModel.method()
         viewModel2.method()
-
-        findViewById<TextView>(R.id.tv_hello_world).setOnClickListener {
-            Intent(this, MainActivity2::class.java).apply {
-                startActivity(this)
-            }
-        }
     }
 }
