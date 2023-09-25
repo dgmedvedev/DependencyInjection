@@ -9,13 +9,13 @@ import dagger.Subcomponent
 interface ActivityComponent {
 
     fun inject(activity: MainActivity)
-
     fun inject(activity: MainActivity2)
 
     @Subcomponent.Factory
     interface Factory {
         fun create(
-            @BindsInstance id: String
+            @BindsInstance @IdQualifier id: String,
+            @BindsInstance @NameQualifier name: String
         ): ActivityComponent
     }
 }
